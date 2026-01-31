@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BILI 9D • Photobooth PRO</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/layout.css"/>
+  <link rel="stylesheet" href="css/camera.css"/>
+  <link rel="stylesheet" href="css/effects.css"/>
+</head>
+<body>
+<header class="top">
+  <h1>BILI 9D</h1>
+  <span>Photobooth PRO</span>
+</header>
+
+<main class="wrap">
+  <section class="viewer">
+    <video id="video" autoplay playsinline></video>
+    <canvas id="canvas" width="720" height="960"></canvas>
+    <div id="frameOverlay" class="frame-overlay"></div>
+    <img id="watermark" class="watermark" src="assets/icons/wm.png" alt="wm">
+  </section>
+
+  <section class="panel">
+    <div class="block">
+      <label>Camera</label>
+      <button id="switchCam">Switch</button>
+    </div>
+    <div class="block">
+      <label>Timer</label>
+      <select id="timer">
+        <option value="0">No Timer</option>
+        <option value="3">3s</option>
+        <option value="5">5s</option>
+      </select>
+    </div>
+    <div class="block">
+      <label>Filter</label>
+      <select id="filter"></select>
+    </div>
+    <div class="block">
+      <label>Frame</label>
+      <select id="frame"></select>
+    </div>
+    <div class="block">
+      <label>Sticker</label>
+      <select id="sticker"></select>
+    </div>
+    <div class="actions">
+      <button id="capture">Capture</button>
+      <button id="download">Download</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  Contact: <a href="https://t.me/butzxploit" target="_blank">@butzxploit</a>
+</footer>
+
+<script src="js/camera.js"></script>
+<script src="js/filters.js"></script>
+<script src="js/frames.js"></script>
+<script src="js/stickers.js"></script>
+<script src="js/capture.js"></script>
+<script src="js/ui.js"></script>
+<script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('sw.js');
+}
+</script>
+</body>
+</html>
